@@ -7,6 +7,7 @@
   font-family: 'Open Sans', sans-serif;
 
 }
+
 a{
   font-size: 1.5rem;
   font-weight: 700;
@@ -82,6 +83,7 @@ main{
       padding-right: 20px;
 
       p{
+        text-align: justify;
         color: #ffffff;
         font-weight: bolder;
         line-height: 1.9em;
@@ -94,7 +96,7 @@ main{
       padding-top: 50px;
       padding-bottom: 15px;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: row;
       align-items: center;
       justify-content: space-around;
       div.OS-buttons{
@@ -117,6 +119,7 @@ main{
       }
     }
     div.explain-block{
+      margin-bottom: 20px;
       min-width: 500px;
       padding: 15px;
       width: 90%;
@@ -148,12 +151,20 @@ main{
         iframe{
           width: 90%;
         }
-        img{
-          width: 90%;
+        div.img-container{
+          display: flex;
+          width: 100%;
+          justify-content: flex-end;
+          img{
+            width: 90%;
+          }
         }
       }
       div.text-container{
         width: 58%;
+        p{
+          text-align: justify;
+        }
       }
     }
     div.footer-block{
@@ -198,18 +209,54 @@ main{
   }
   main{
     .content{
+      div.OS-buttons-container{
+        //flex-direction: column !important;
+          div.OS-buttons {
+            width: 150px !important;
+          }
+        }
       div.video-block{
         div.text-container{
           width: 90%!important;
         }
         div.video-container{
+          width: 80% !important;
           img{
             display: none;
+          }
+          iframe{
+            padding-bottom: 25px;
           }
         }
       }
 
     }
+    .adaptive-img{
+      min-width: 360px;
+      margin-top: 30px;
+      width: 70%;
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : 745px) {
+  main {
+    .content {
+      div.OS-buttons-container {
+        flex-direction: column !important;
+        div.OS-buttons {
+          width: 200px !important;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width : 975px) {
+  .adaptive-img{
+    display: none;
   }
 }
 
@@ -222,3 +269,4 @@ main{
 
 .witch{
 }
+
